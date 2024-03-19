@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+	xmlns:nrepl="http://www.mulesoft.org/schema/mule/nrepl"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/nrepl http://www.mulesoft.org/schema/mule/nrepl/current/mule-nrepl.xsd
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<nrepl:config name="Nrepl_Config" doc:name="Nrepl Config" doc:id="025e0d26-fda5-4c36-ae04-c067ad26ee20" configId="main" port="${transport.port}"/>
+	<configuration-properties doc:name="Configuration properties" doc:id="438c3f7b-00d9-4c72-9fb1-eba62796191a" file="config.yaml" />
+	<flow name="nreplFlow" doc:id="7108b130-0005-435d-9419-48d2844e78a4" >
+		<nrepl:listener doc:name="Listener" doc:id="b4a1aa20-78c5-443c-9653-ef52585ed2cf" config-ref="Nrepl_Config" protocol="${transport.type}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="1feec81a-352f-4fca-8bab-a09d32ff3596" message="hello"/>
+	</flow>
+</mule>
