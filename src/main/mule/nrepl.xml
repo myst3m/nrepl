@@ -11,6 +11,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<configuration-properties doc:name="Configuration properties" doc:id="438c3f7b-00d9-4c72-9fb1-eba62796191a" file="config.yaml" />
 	<flow name="nreplFlow" doc:id="7108b130-0005-435d-9419-48d2844e78a4" >
 		<nrepl:listener doc:name="Listener" doc:id="b4a1aa20-78c5-443c-9653-ef52585ed2cf" config-ref="Nrepl_Config" protocol="${transport.type}"/>
-		<logger level="INFO" doc:name="Logger" doc:id="1feec81a-352f-4fca-8bab-a09d32ff3596" message="hello"/>
+		<logger level="INFO" doc:name="Logger" doc:id="1feec81a-352f-4fca-8bab-a09d32ff3596" message="#[payload]"/>
 	</flow>
 </mule>
